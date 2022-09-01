@@ -1,13 +1,15 @@
 import express from 'express';
-import indexRouter from '../routes';
+import cors from 'cors';
+import { router } from '../routes';
 
 const app = express();
 
-// Middlewares...
+// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
-// Routes...
-app.use('/', indexRouter);
+// Routes
+app.use(router);
 
 export { app };
