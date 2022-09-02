@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { readdirSync } from 'fs';
-import indexController from '../controllers/index.controller';
 
 const PATH_ROUTER = `${__dirname}`;
 const router = Router();
@@ -16,11 +15,9 @@ readdirSync(PATH_ROUTER).filter(filename => {
 
   if (cleanFile !== 'index') {
     import(`./${cleanFile}`).then(moduleRouter => {
-      router.use(`./${cleanFile}`, moduleRouter.router);
+      router.use(`/${cleanFile}`, moduleRouter.router);
     });
   }
 });
-
-router.get('/', indexController.getIndexService);
 
 export { router };
