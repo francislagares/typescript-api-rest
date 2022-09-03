@@ -8,13 +8,13 @@ datasource db {
 }
 
 model Car {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   color       String
   gas         Gas
-  year        DateTime
+  year        String
   description String
-  price       Int
+  price       String
 }
 
 enum Gas {
