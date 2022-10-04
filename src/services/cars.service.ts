@@ -1,5 +1,5 @@
 import { Car } from '@prisma/client';
-import database from '../config/database';
+import database from '@/config/database';
 
 const insertCar = async (item: Car) => {
   const newCar = await database.car.create({

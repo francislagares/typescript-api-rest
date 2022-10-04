@@ -4,7 +4,6 @@
     "module": "commonjs",
     "outDir": "./build",
     "moduleResolution": "node",
-    "baseUrl": "./src",
     "esModuleInterop": true,
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -22,7 +21,13 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

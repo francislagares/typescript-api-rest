@@ -1,6 +1,6 @@
 import request from 'supertest';
-import { app } from '../app';
-import database from '../config/database';
+import { app } from '@/app';
+import database from '@/config/database';
 
 describe('Cars API', () => {
   test('GET /cars with response statusCode 200 ', async () => {
